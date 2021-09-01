@@ -5,7 +5,7 @@ const number = document.querySelector('.js_number');
 const submit = document.querySelector('.js_submit');
 const clue = document.querySelector('.js_clue');
 const tries = document.querySelector('.js_try');
-let counter = 1;
+let counter =0;
 
 
 // * Generar un numero aleatorio
@@ -18,22 +18,22 @@ let randomNumber = getRandomNumber(100);
 
 console.log(`Mi número aleatorio es ${randomNumber}`);
 
-// * Contador
-function count() {
-    return counter++
-}
+// // * Contador
+// function count() {
+//     return counter++
+// }
 
 
 // * Cojer value de la usuaria 
 //función del listener
 function getUserNumber() {
     let inputValue = number.value;
-    count()
+    // count()
     return inputValue;
 }
 
 // Listener
-submit.addEventListener('click', getUserNumber);
+// submit.addEventListener('click', getUserNumber);
 
 //Variable del número introducido
 // let userNumber = getUserNumber();
@@ -60,20 +60,34 @@ function getMajorOrMinor(number) {
         return 'Demasiado bajo.'
     } else {
         return 'Has ganado campeona'
+        console.log('afa')
     }
 }
 
 // * Escribir en pantalla la pista 
-function writeClue() {
-    let majorOrMinor = getMajorOrMinor()
-    return clue.innerHTML = majorOrMinor
+function writeClue(a) {
+    // let majorOrMinor = getMajorOrMinor()
+    return clue.innerHTML = a
 }
 
 // * Escribir en pantalla cuantos intentos va 
 function writeTry() {
-    let triesCount = count()
-    return tries.innerHTML = triesCount
+    // let triesCount = count()
+    return tries.innerHTML = counter
 }
+
+// * Juego 
+
+function game() {
+    counter++;
+    let userNumber = getUserNumber();
+    let is = isANumber(userNumber);
+    let clue = getMajorOrMinor(userNumber);
+    writeClue(clue);
+    writeTry();
+}
+
+submit.addEventListener('click', game);
 
 
 
