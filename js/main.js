@@ -3,7 +3,8 @@
 // * Variables
 const number = document.querySelector('.js_number');
 const submit = document.querySelector('.js_submit');
-
+const clue = document.querySelector('.js_clue');
+const tries = document.querySelector('.js_try');
 let counter = 1;
 
 
@@ -61,6 +62,20 @@ function getMajorOrMinor(number) {
         return 'Has ganado campeona'
     }
 }
+
+// * Escribir en pantalla la pista 
+function writeClue() {
+    let majorOrMinor = getMajorOrMinor()
+    return clue.innerHTML = majorOrMinor
+}
+
+// * Escribir en pantalla cuantos intentos va 
+function writeTry() {
+    let triesCount = count()
+    return tries.innerHTML = triesCount
+}
+
+
 
 
 
