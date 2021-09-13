@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="./styles/reset.css"> -->
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Evaluación intermedia - Módulo 2</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Adivina el número</h1>
-        <h2>Introduce aqui tu número</h2>
-        <input type="text" name="number" id="number" class="js_number">
-        <button type="submit" class="js_submit">Prueba</button>
-    </header>   
+      <h1>Adivina el número</h1>
+      <h2>Introduce aqui tu número</h2>
+    </header>
     <main>
-        <p>Pista: <span class="js_clue"> Escribe el número y dale a Prueba </span></p>
-        <p>Número de intentos: <span class="js_try"> 0 </span></p>
-    </main> 
-    
-    
-    
+      <form>
+        <input type="text" name="number" id="number" class="js_number" placeholder="Escribe aquí"/>
+        <label for="number"></label>
+        <button type="submit" class="js_submit">Prueba</button>
+      </form>
+      <p>
+        Pista: <span class="js_clue"> Escribe el número y dale a Prueba </span>
+      </p>
+      <p>Número de intentos: <span class="js_try"> 0 </span></p>
+    </main>
+
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>
